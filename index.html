@@ -36,24 +36,10 @@
                 crossDeviceQRCode: true,
                 crossDeviceSMS: true,
 
-                // called when the verification is completed.
-                onDone: (job) => {
-                    // token used to query jobs
-                    console.log("Scanning complete", { token: job.token });
+               // content object
 
-                    // An alternative way to update your system based on the 
-                    // results of the job. Your backend could perform the following:
-                    // 1. query jobs with the token
-                    // 2. store relevant job information such as the id and 
-                    //    success property into the user's profile
-                    fetch(`/yourapi/idv?job_token=${job.token}`);
-
-                    // Redirect to the next page based on the job success
-                    if (job.result.success) {
-                        window.location.replace("https://website.com/success/");
-                    } else {
-                        window.location.replace("https://website.com/failed/");
-                    }
+                content: {
+                    qrDesktopInstructions: ' '
                 },
 
                 // theme
