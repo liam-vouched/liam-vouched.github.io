@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="“viewport”" content="“width=device-width," initial-scale=1.0">
+    <script src="https://static.vouched.id/widget/vouched-2.0.0.js"></script>
+
+    <title>Reset Button Example</title>
+
+    <style>
+      body {
+        position: relative;
+      }
+      .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 1;
+      }
+
+      #modal {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: white;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        z-index: 2;
+        width: 800px;
+        height: 800px;
+      }
+
+      .content {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      #vouched-element {
+        position: relative;
+        width: 100%;
+        height: 100%;
+      }
+    </style>
+
+<script type="text/javascript">
+
+var reloadPage = function() {
+      location.reload();
+  };
+</script>
+
+    <script type="text/javascript">
+      (function initVouch() {
+        var vouched = Vouched({
+          // Optional verification properties.
+          verification: {
+            // verify the user's information
+            firstName: "Anne",
+            lastName: "dv-approved",
+            // used for the crosscheck feature
+            email: "",
+            phone: "",
+          },
+          liveness: "straight",
+          face: "both",
+          id: "both",
+          appId: "HhxT~@q6qS*.E-.SF8JX3r0ZM31oNg",
+
+          // mobile handoff
+          crossDevice: true,
+          crossDeviceQRCode: true,
+          crossDeviceSMS: true,
+
+          disableCssBaseline: true,
+
+
+          // theme
+          theme: {
+            name: "verbose", // verbose , avant, classic (deprecated)
+          },
+        });
+        vouched.mount("#vouched-element");
+      })();
+    </script>
+  </head>
+  <body>
+    <h1>Vouched reset button example</h1>
+
+    <div class="overlay"></div>
+    <div id="modal">
+
+      <div id="reset-button" onclick="reloadPage();" style="float:right;">
+        <button type="button">Reset</button>
+      </div>
+      <div class="content">
+    
+        <div id="vouched-element"></div>
+      </div>
+    </div>
+  </body>
+</html>
