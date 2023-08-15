@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- utf-8 is required for JS Plugin default fonts -->
+    <meta charset="utf-8" />
+    <meta name=“viewport” content=“width=device-width, initial-scale=1.0">
+    <script src="https://static.vouched.id/widget/vouched-2.0.0.js"></script>
+    <script type='text/javascript'>
+
+
+        (function () {
+            var vouched = Vouched({
+                // Optional verification properties.
+                verification: {
+                    // verify the user's information 
+                    firstName: 'Gladys',
+                    lastName: 'West',
+                    // used for the crosscheck feature
+                    email: 'test@test.id',
+                    phone: '000-111-2222'
+                },
+                liveness: 'straight',
+                id: 'both',
+                selfie: 'both',
+                disableCssBaseline: true,
+
+                appId: 'HhxT~@q6qS*.E-.SF8JX3r0ZM31oNg',
+                // your webhook for POST verification processing
+                callbackURL: 'https://webhook.site/72964bfd-a41f-4ef1-bce3-232dea29c03d',
+
+                // mobile handoff
+                crossDevice: true,
+                crossDeviceQRCode: true,
+                crossDeviceSMS: true,
+
+                // theme
+                theme: {
+                    name: 'avant',
+                },
+            });
+            vouched.mount("#vouched-element");
+        })();
+
+    </script>
+</head>
+
+<body>
+    <div id='vouched-element' style="height: 500px"></div>
+    <div id="testing" style="padding-top:50px;text-align:center;">
+        <button type="button" style="
+    margin-left: auto;
+    margin-right: auto;
+    width: 100px;
+">Reset</button>
+    </div>
+</body>
+
+</html>
