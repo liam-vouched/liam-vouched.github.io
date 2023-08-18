@@ -1,0 +1,42 @@
+<head>
+  <!-- utf-8 is required for JS Plugin default fonts -->
+  <meta charset="utf-8" />
+  <script src="https://static.vouched.id/widget/vouched-2.0.0.js"></script>
+  <script type='text/javascript'>
+
+
+    (function() {
+      var vouched = Vouched({
+        // specify reverification job
+        type: 'reverify',
+        reverificationParameters: {
+          // reference the source job by its id
+          jobId: '5DSKQ61cW'
+        },
+
+        // theme must be 'avant' for reverification
+        theme: {
+          name: 'avant',
+        },
+        
+        appId: "HhxT~@q6qS*.E-.SF8JX3r0ZM31oNg",
+        // your webhook for POST verification processing
+
+        // mobile handoff
+        crossDevice: true,
+        crossDeviceQRCode: true,
+        crossDeviceSMS: true,
+        onInit: ({token, job}) => {
+          console.log('initialization');
+        },
+        
+        // called when the reverification is completed.      
+      });
+      vouched.mount("#vouched-element");
+    })();
+
+  </script>
+</head>
+<body>
+  <div id='vouched-element' style="height: 100%"/>
+</body>
