@@ -54,11 +54,21 @@ var reloadPage = function() {
     <script type="text/javascript">
       (function initVouch() {
         var vouched = Vouched({
+
+          // Content
+
+          content: {
+            review: "the job is completed but the review param was triggered.",
+            success: "Standard success message.",
+            crosssDeviceSuccess: "Cross device success message.",
+            mobileHandoffDoneMessage: "Mobile handoff done message."
+          },
+          
           // Optional verification properties.
           verification: {
             // verify the user's information
-            firstName: "Anne",
-            lastName: "dv-approved",
+            firstName: "Seacoast",
+            lastName: "Testing",
             // used for the crosscheck feature
             email: "",
             phone: "",
@@ -66,7 +76,7 @@ var reloadPage = function() {
           liveness: "straight",
           face: "both",
           id: "both",
-          appId: "m##D7gngzOfw!t50.nnGTQd7f~!c0k",
+          appId: "d6Cy7!c*m#QndFfrq2vY!~lKUnKssO",
 
           // mobile handoff
           crossDevice: true,
