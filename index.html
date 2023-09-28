@@ -27,6 +27,30 @@
                     name: "Baz", value: "Qux"
                 }],
 
+                // called when the verification is completed.
+        onDone: (job) => {
+          // token used to query jobs
+          console.log("Scanning complete", { token: job.token });
+
+          // An alternative way to update your system based on the 
+          // results of the job. Your backend could perform the following:
+          // 1. query jobs with the token
+          // 2. store relevant job information such as the id and 
+          //    success property into the user's profile
+          fetch(`/yourapi/idv?job_token=${job.token}`);
+
+          // Redirect to the next page based on the job success
+          if( job.result.success){
+            localStorage.clear();
+            sessionStorage.clear();
+            window.location.replace("#");
+          }else{
+            localStorage.clear();
+            sessionStorage.clear();
+            window.location.replace("#");  
+          }
+        },
+
                 appId: 'm##D7gngzOfw!t50.nnGTQd7f~!c0k',
                 // your webhook for POST verification processing
                 callbackURL: 'https://webhook.site/72964bfd-a41f-4ef1-bce3-232dea29c03d',
