@@ -1,0 +1,47 @@
+<!-- Home Depot Testing -->
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- utf-8 is required for JS Plugin default fonts -->
+  <meta charset="utf-8" />
+  <meta name=“viewport” content=“width=device-width, initial-scale=1.0">
+  <script src="https://static.vouched.id/plugin/releases/latest/index.js"></script>
+  <script type='text/javascript'>
+    (function() {
+      var vouched = Vouched({
+        liveness: 'straight',
+        appId: 'zpeUZZfX.pFp#hd_S1hQ-79-4tvdt@',
+       // your webhook for POST verification processing
+      //  callbackURL: 'https://website.com/webhook',
+
+        // mobile handoff
+        crossDevice: true,
+        crossDeviceQRCode: true,
+        crossDeviceSMS: true,
+        
+        // theme
+        theme: {
+          name: 'avant',
+          bgColor: '#f5f5f5',
+          logo: {
+              src: 'https://corporate.homedepot.com/sites/default/files/image_gallery/THD_logo.jpg',
+              style: {
+                'max-width': 150
+              }
+          },
+          iconColor: '#F96302',
+          iconBackground: '#FFFFF',
+          baseColor: '#F96302',
+          fontColor: '#333',
+          secondaryButtonColor: '#3e7697'
+        },
+      });
+      vouched.mount("#vouched-element");
+    })();
+
+  </script>
+</head>
+<body>
+  <div id='vouched-element' style="height: 100%"/>
+</body>
+</html>
