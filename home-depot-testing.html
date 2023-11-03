@@ -36,13 +36,14 @@
           //    success property into the user's profile
           //fetch(`/yourapi/idv?job_token=${job.token}`);
 
-          fetch(`https://x8ki-letl-twmt.n7.xano.io/api:zrONWE4F/ondone?ondone_response=job`, {method: 'POST'});
-          console.log(`${job}`);
-          console.log(`${job.result}`);
-          console.log(`${job.result.success}`);
-          console.log(`${job.result.status}`);
-          console.log(JSON.stringify(`${job}`));
+          var base_url = 'https://x8ki-letl-twmt.n7.xano.io/api:zrONWE4F/ondone?ondone_response=';
+          var job_info = job;
+
+          var concat_url = base_url.concat(job_info);
+
+          fetch(concat_url, {method: 'POST'});
           console.log(job);
+          console.log(concat_url);
         },
 
         // content
