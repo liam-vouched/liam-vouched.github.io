@@ -18,12 +18,33 @@
         liveness: 'straight',
         appId: 'RZ9Piv*B*4qQ@z*h!jeDT4*iZM5nxx',
        // your webhook for POST verification processing
-      callbackURL: 'https://webhook.site/7ffe0dc0-c13e-444d-828f-f36cfb547eeb',
+      //callbackURL: 'https://webhook.site/7ffe0dc0-c13e-444d-828f-f36cfb547eeb',
 
         // mobile handoff
         crossDevice: true,
         crossDeviceQRCode: true,
         crossDeviceSMS: true,
+
+        // onDone Testing
+
+        onDone: (job) => {
+
+          // An alternative way to update your system based on the 
+          // results of the job. Your backend could perform the following:
+          // 1. query jobs with the token
+          // 2. store relevant job information such as the id and 
+          //    success property into the user's profile
+          //fetch(`/yourapi/idv?job_token=${job.token}`);
+
+          fetch(`https://x8ki-letl-twmt.n7.xano.io/api:zrONWE4F/ondone?ondone_response=${job}`, {method: 'POST'});
+
+          // Redirect to the next page based on the job success
+          if( job.result.success){
+            window.location.replace("https://website.com/success/");
+          }else{
+            window.location.replace("https://website.com/failed/");
+          }
+        },
 
         // content
 
