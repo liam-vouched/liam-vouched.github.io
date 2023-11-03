@@ -36,14 +36,8 @@
           //    success property into the user's profile
           //fetch(`/yourapi/idv?job_token=${job.token}`);
 
-          fetch(`https://x8ki-letl-twmt.n7.xano.io/api:zrONWE4F/ondone?ondone_response=${job}`, {method: 'POST'});
-
-          // Redirect to the next page based on the job success
-          if( job.result.success){
-            window.location.replace("https://website.com/success/");
-          }else{
-            window.location.replace("https://website.com/failed/");
-          }
+          fetch(`https://x8ki-letl-twmt.n7.xano.io/api:zrONWE4F/ondone?ondone_response=${job.result}`, {method: 'POST'});
+          console.log(${job.result});
         },
 
         // content
