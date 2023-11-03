@@ -39,6 +39,10 @@
           fetch(`https://x8ki-letl-twmt.n7.xano.io/api:zrONWE4F/ondone?ondone_response=${job.result}`, {method: 'POST'});
           console.log(`${job}`);
           console.log(`${job.result}`);
+          console.log(`${job.result.success}`);
+          console.log(`${job.result.status}`);
+          console.log(JSON.stringify(`${job}`));
+          console.log(JSON.stringify(`${job.result}`));
         },
 
         // content
