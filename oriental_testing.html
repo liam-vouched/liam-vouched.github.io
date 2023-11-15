@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- utf-8 is required for JS Plugin default fonts -->
+  <meta charset="utf-8" />
+  <meta name=“viewport” content=“width=device-width, initial-scale=1.0">
+  <script src="https://static.vouched.id/plugin/releases/latest/index.js"></script>
+  <script type='text/javascript'>
+    (function() {
+      var vouched = Vouched({
+      // Optional verification properties.
+        verification: {
+          // verify the user's information 
+          firstName: 'Oriental',
+          lastName: 'Testing',
+          // used for the crosscheck feature
+          email: 'test@test.id',
+          phone: '000-111-2222'
+        },
+        liveness: 'orientation',
+        id: 'both',
+        face: 'both',
+        
+        appId: 'RZ9Piv*B*4qQ@z*h!jeDT4*iZM5nxx',
+
+        // mobile handoff
+        crossDevice: true,
+        crossDeviceQRCode: true,
+        crossDeviceSMS: true,
+        
+        // theme
+        theme: {
+          name: 'verbose',
+        },
+      });
+      vouched.mount("#vouched-element");
+    })();
+
+  </script>
+</head>
+<body>
+  <div id='vouched-element' style="height: 100%"/>
+</body>
+</html>
