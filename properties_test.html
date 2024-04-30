@@ -1,11 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <style> <!-- Left align the face text bullet points -->
-.faceText {
-    text-align: left;
-}
-</style>
   <!-- utf-8 is required for JS Plugin default fonts -->
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -17,25 +12,25 @@
         verification: {
           // verify the user's information 
           firstName: 'iFrame_Gladys',
-          lastName: 'West',
+          lastName: 'Properties',
           // used for the crosscheck feature
           email: 'test@test.id',
           phone: '000-111-2222'
         },
         liveness: 'straight',
+
+        callbackURL: 'https://webhook.site/53a63e55-b27e-46cb-a472-7689d470147d',
         
-        appId: 'C!q_U8U~J@Bn1ptsbNWGc@dd*RapUV',
+        appId: 'x5JW~pu@~ieC#Rm4QvLm06aqj~*1VZ',
 
         // mobile handoff
         crossDevice: true,
         crossDeviceQRCode: true,
         crossDeviceSMS: true,
 
-        // content
+        // custom property test
 
-        content: {
-            lowestFaceInstructions: '<ul style="text-align:left;"> <li>Sunglasses, hats or other facial coverings</li><li>Printed photos or screen captures</li><li>Other people or pets in the background</li> </ul>'
-        },
+        properties: [ {name: "Application ID", value: "123"}, {name: "User ID", value: "4568780"} ],
         
         // theme
         theme: {
