@@ -1,1 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Redirect testing -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script src="https://static.vouched.id/plugin/releases/latest/index.js"></script>
+  <script type='text/javascript'>
+    (function() {
+      var vouched = Vouched({
+      // Optional verification properties.
+        verification: {
+          // verify the user's information 
+          firstName: 'Gladys',
+          lastName: 'West_redirect_test',
+          // used for the crosscheck feature
+          email: 'test@test.id',
+          phone: '000-111-2222'
+        },
+        liveness: 'straight',
+        
+        appId: '3S!qn@S_4AmgUrt5fdlKZZc0Q3~Q*V',
+       // your webhook for POST verification processing
+        callbackURL: 'https://website.com/webhook',
+
+        // mobile handoff
+        crossDevice: true,
+        crossDeviceQRCode: true,
+        crossDeviceSMS: true,
+        
+        // called when the verification is completed.
+        onDone: (job) => {
+          // token used to query jobs
+          console.log("Scanning complete", { token: job.token });
+
+          // An alternative way to update your system based on the 
+          // results of the job. Your backend could perform the following:
+          // 1. query jobs with the token
+          // 2. store relevant job information such as the id and 
+          //    success property into the user's profile
+          fetch(`/yourapi/idv?job_token=${job.token}`);
+
+          // Redirect to the next page based on the job success
+          if( job.result.success){
+            window.location.replace("https://myinstantmd.training.zipnosis.com/register?l=en");
+          }else{
+            window.location.replace("https://myinstantmd.training.zipnosis.com/register?l=en");
+          }
+        },
+        
+        // theme
+        theme: {
+          name: 'avant',
+        },
+      });
+      vouched.mount("#vouched-element");
+    })();
+
+  </script>
+</head>
+<body>
+  <div id='vouched-element' style="height: 100%"/>
+</body>
+</html>
+
+
 
