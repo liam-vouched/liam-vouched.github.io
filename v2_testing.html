@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Redirect testing -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script src="https://static.vouched.id/plugin/releases/v2.0.0/index.js"></script>
+  <script type='text/javascript'>
+    (function() {
+      var vouched = Vouched({
+      // Optional verification properties.
+        verification: {
+          // verify the user's information 
+          firstName: 'Gladys',
+          lastName: 'West_V2_test',
+          // used for the crosscheck feature
+          email: 'test@test.id',
+          phone: '000-111-2222'
+        },
+        liveness: 'straight',
+        
+        appId: 'a@2Nr!CLtPJ*lh@8#UVpVq2gjYzxVf',
+
+        // mobile handoff
+        crossDevice: true,
+        crossDeviceQRCode: true,
+        crossDeviceSMS: true,
+
+        // include barcode to test v2 capture process
+
+        includeBarcode: true,
+        
+        // theme
+        theme: {
+          name: 'avant',
+        },
+      });
+      vouched.mount("#vouched-element");
+    })();
+
+  </script>
+</head>
+<body>
+  <div id='vouched-element' style="height: 100%"/>
+</body>
+</html>
+
+
